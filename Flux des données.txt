@@ -1,0 +1,4 @@
+Application Android --> Serveur HTTP --> Requête : GET --> Node-RED --> Pin Arduino
+ 
+Pin Arduino --> Node-RED --> Prometheus --> Grafana (affichage web)
+			 --> Serveur HTTP --> Application Androïd
