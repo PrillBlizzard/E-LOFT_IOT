@@ -1,0 +1,132 @@
+[
+    {
+        "id": "e1238f405ad440e8",
+        "type": "tab",
+        "label": "Flux 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f27cd5dcfa0bb616",
+        "type": "arduino in",
+        "z": "e1238f405ad440e8",
+        "name": "",
+        "pin": "2",
+        "state": "INPUT",
+        "arduino": "",
+        "x": 290,
+        "y": 300,
+        "wires": [
+            [
+                "bb73240c202a2fb1"
+            ]
+        ]
+    },
+    {
+        "id": "9c01f8e91de5e46a",
+        "type": "arduino in",
+        "z": "e1238f405ad440e8",
+        "name": "",
+        "pin": "2",
+        "state": "INPUT",
+        "arduino": "",
+        "x": 270,
+        "y": 400,
+        "wires": [
+            [
+                "65fcd93944236329"
+            ]
+        ]
+    },
+    {
+        "id": "e79234d9cbe783f8",
+        "type": "function",
+        "z": "e1238f405ad440e8",
+        "name": "Humidité ",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 300,
+        "wires": [
+            [
+                "8fe93160f8ab799a"
+            ]
+        ]
+    },
+    {
+        "id": "1d7b4753eef506d7",
+        "type": "function",
+        "z": "e1238f405ad440e8",
+        "name": "Température",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 400,
+        "wires": [
+            [
+                "8fe93160f8ab799a"
+            ]
+        ]
+    },
+    {
+        "id": "8fe93160f8ab799a",
+        "type": "arduino out",
+        "z": "e1238f405ad440e8",
+        "name": "",
+        "pin": "",
+        "state": "",
+        "x": 990,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "65fcd93944236329",
+        "type": "1-Wire",
+        "z": "e1238f405ad440e8",
+        "identifier": "",
+        "name": "Température-1-Wire",
+        "format": "1",
+        "x": 480,
+        "y": 400,
+        "wires": [
+            [
+                "1d7b4753eef506d7"
+            ]
+        ]
+    },
+    {
+        "id": "bb73240c202a2fb1",
+        "type": "1-Wire",
+        "z": "e1238f405ad440e8",
+        "identifier": "",
+        "name": "Humidité-1-Wire",
+        "format": "1",
+        "x": 480,
+        "y": 300,
+        "wires": [
+            [
+                "e79234d9cbe783f8"
+            ]
+        ]
+    },
+    {
+        "id": "7932d28201e32d65",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-node-arduino": "1.4.0",
+            "node-red-contrib-1wire": "0.0.2"
+        }
+    }
+]
